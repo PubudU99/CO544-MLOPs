@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: mlProject
+Version: 0.0.0
+Summary: A small python package for ml app
+Home-page: https://github.com/PubudU99/CO544-MLOPs
+Author: PubudU99
+Author-email: pubudumadusith0911@gmail.com
+Project-URL: Bug Tracker, https://github.com/PubudU99/CO544-MLOPs/issues
+License-File: LICENSE
+
+# CO544-MLOPs
+End to end ml ops learning
