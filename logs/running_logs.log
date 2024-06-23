@@ -287,3 +287,617 @@ x==========x]
 [2024-06-23 18:06:56,942: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
 
 x==========x]
+[2024-06-23 19:18:18,151: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 19:18:18,153: ERROR: main: while parsing a block mapping
+  in "config\config.yaml", line 1, column 1
+expected <block end>, but found '<block mapping start>'
+  in "config\config.yaml", line 19, column 2]
+Traceback (most recent call last):
+  File "d:\1Semester 6\ML\Project\CO544-MLOPs\main.py", line 10, in <module>
+    obj.main()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\pipeline\stage_01_data_ingestion.py", line 14, in main
+    config = ConfigurationManager()
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\config\configuration.py", line 14, in __init__
+    self.config = read_yaml(config_filepath)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\ensure\main.py", line 849, in __call__
+    return_val = self.f(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\utils\common.py", line 36, in read_yaml
+    raise e
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\utils\common.py", line 30, in read_yaml
+    content = yaml.safe_load(yaml_file)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\yaml\__init__.py", line 125, in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\yaml\__init__.py", line 81, in load
+    return loader.get_single_data()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\yaml\constructor.py", line 49, in get_single_data
+    node = self.get_single_node()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\yaml\composer.py", line 36, in get_single_node
+    document = self.compose_document()
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\yaml\composer.py", line 55, in compose_document
+    node = self.compose_node(None, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\yaml\composer.py", line 84, in compose_node
+    node = self.compose_mapping_node(anchor)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\yaml\composer.py", line 127, in compose_mapping_node
+    while not self.check_event(MappingEndEvent):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\yaml\parser.py", line 98, in check_event
+    self.current_event = self.state()
+                         ^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\yaml\parser.py", line 438, in parse_block_mapping_key
+    raise ParserError("while parsing a block mapping", self.marks[-1],
+yaml.parser.ParserError: while parsing a block mapping
+  in "config\config.yaml", line 1, column 1
+expected <block end>, but found '<block mapping start>'
+  in "config\config.yaml", line 19, column 2
+[2024-06-23 19:19:52,995: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 19:19:52,997: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:19:52,998: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:19:53,000: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:19:53,000: INFO: common: created directory at: artifacts]
+[2024-06-23 19:19:53,000: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-23 19:19:53,001: INFO: data_ingestion: File already exists of size: ~ 9 KB]
+[2024-06-23 19:19:53,005: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-23 19:19:53,006: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-06-23 19:19:53,008: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:19:53,009: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:19:53,010: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:19:53,011: INFO: common: created directory at: artifacts]
+[2024-06-23 19:19:53,011: INFO: common: created directory at: artifacts/data_validation]
+[2024-06-23 19:19:53,023: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 19:19:53,023: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-06-23 19:19:53,025: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:19:53,026: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:19:53,027: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:19:53,028: INFO: common: created directory at: artifacts]
+[2024-06-23 19:19:53,028: INFO: common: created directory at: artifacts/data_transformation]
+[2024-06-23 19:19:53,043: INFO: data_transformation: Splited data into training and test sets]
+[2024-06-23 19:19:53,044: INFO: data_transformation: (604, 12)]
+[2024-06-23 19:19:53,044: INFO: data_transformation: (202, 12)]
+[2024-06-23 19:19:53,045: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 19:50:56,595: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 19:50:56,597: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:50:56,598: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:50:56,599: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:50:56,599: INFO: common: created directory at: artifacts]
+[2024-06-23 19:50:56,600: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-23 19:50:56,600: INFO: data_ingestion: File already exists of size: ~ 9 KB]
+[2024-06-23 19:50:56,602: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-23 19:50:56,603: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-06-23 19:50:56,604: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:50:56,605: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:50:56,606: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:50:56,607: INFO: common: created directory at: artifacts]
+[2024-06-23 19:50:56,607: INFO: common: created directory at: artifacts/data_validation]
+[2024-06-23 19:50:56,613: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 19:50:56,614: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-06-23 19:50:56,616: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:50:56,617: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:50:56,617: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:50:56,618: INFO: common: created directory at: artifacts]
+[2024-06-23 19:50:56,618: INFO: common: created directory at: artifacts/data_transformation]
+[2024-06-23 19:50:56,628: INFO: data_transformation: Splited data into training and test sets]
+[2024-06-23 19:50:56,628: INFO: data_transformation: (604, 12)]
+[2024-06-23 19:50:56,629: INFO: data_transformation: (202, 12)]
+[2024-06-23 19:50:56,629: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 19:50:56,629: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-06-23 19:50:56,631: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:50:56,632: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:50:56,634: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:50:56,634: INFO: common: created directory at: artifacts]
+[2024-06-23 19:50:56,635: ERROR: main: "'ConfigBox' object has no attribute 'model_trainer'"]
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'model_trainer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'model_trainer'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'model_trainer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'model_trainer'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'model_trainer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'model_trainer'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'model_trainer'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\1Semester 6\ML\Project\CO544-MLOPs\main.py", line 45, in <module>
+    data_ingestion.main()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\pipeline\stage_04_model_trainer.py", line 15, in main
+    model_trainer_config = config.get_model_trainer_config()
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\config\configuration.py", line 65, in get_model_trainer_config
+    config = self.config.model_trainer
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'model_trainer'"
+[2024-06-23 19:54:07,204: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 19:54:07,206: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:54:07,207: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:54:07,208: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:54:07,208: INFO: common: created directory at: artifacts]
+[2024-06-23 19:54:07,209: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-23 19:54:07,209: INFO: data_ingestion: File already exists of size: ~ 9 KB]
+[2024-06-23 19:54:07,212: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-23 19:54:07,212: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-06-23 19:54:07,214: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:54:07,215: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:54:07,216: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:54:07,216: INFO: common: created directory at: artifacts]
+[2024-06-23 19:54:07,217: INFO: common: created directory at: artifacts/data_validation]
+[2024-06-23 19:54:07,223: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 19:54:07,224: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-06-23 19:54:07,226: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:54:07,227: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:54:07,229: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:54:07,229: INFO: common: created directory at: artifacts]
+[2024-06-23 19:54:07,230: INFO: common: created directory at: artifacts/data_transformation]
+[2024-06-23 19:54:07,237: INFO: data_transformation: Splited data into training and test sets]
+[2024-06-23 19:54:07,237: INFO: data_transformation: (604, 12)]
+[2024-06-23 19:54:07,238: INFO: data_transformation: (202, 12)]
+[2024-06-23 19:54:07,238: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 19:54:07,239: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-06-23 19:54:07,241: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:54:07,242: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:54:07,243: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:54:07,244: INFO: common: created directory at: artifacts]
+[2024-06-23 19:54:07,244: INFO: common: created directory at: artifacts/model_trainer]
+[2024-06-23 19:54:07,258: ERROR: main: could not convert string to float: 'F']
+Traceback (most recent call last):
+  File "d:\1Semester 6\ML\Project\CO544-MLOPs\main.py", line 45, in <module>
+    data_ingestion.main()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\pipeline\stage_04_model_trainer.py", line 17, in main
+    model_trainer_config.train()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\components\model_trainer.py", line 25, in train
+    lr.fit(train_x, train_y)
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\linear_model\_coordinate_descent.py", line 980, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1273, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1007, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\_array_api.py", line 746, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\pandas\core\generic.py", line 2153, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'F'
+[2024-06-23 19:56:31,783: INFO: stage_04_model_trainer: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-06-23 19:56:31,785: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 19:56:31,786: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 19:56:31,787: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 19:56:31,787: INFO: common: created directory at: artifacts]
+[2024-06-23 19:56:31,788: INFO: common: created directory at: artifacts/model_trainer]
+[2024-06-23 19:56:31,795: ERROR: stage_04_model_trainer: could not convert string to float: 'F']
+Traceback (most recent call last):
+  File "d:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\pipeline\stage_04_model_trainer.py", line 26, in <module>
+    obj.main()
+  File "d:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\pipeline\stage_04_model_trainer.py", line 17, in main
+    model_trainer_config.train()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\components\model_trainer.py", line 27, in train
+    lr.fit(train_x, train_y)
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\linear_model\_coordinate_descent.py", line 980, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1273, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1007, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\_array_api.py", line 746, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\pandas\core\generic.py", line 2153, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'F'
+[2024-06-23 20:00:16,996: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 20:00:16,998: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 20:00:16,999: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 20:00:17,000: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 20:00:17,001: INFO: common: created directory at: artifacts]
+[2024-06-23 20:00:17,001: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-23 20:00:17,001: INFO: data_ingestion: File already exists of size: ~ 9 KB]
+[2024-06-23 20:00:17,004: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-23 20:00:17,005: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-06-23 20:00:17,006: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 20:00:17,007: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 20:00:17,009: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 20:00:17,009: INFO: common: created directory at: artifacts]
+[2024-06-23 20:00:17,009: INFO: common: created directory at: artifacts/data_validation]
+[2024-06-23 20:00:17,016: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 20:00:17,016: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-06-23 20:00:17,019: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 20:00:17,021: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 20:00:17,022: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 20:00:17,023: INFO: common: created directory at: artifacts]
+[2024-06-23 20:00:17,023: INFO: common: created directory at: artifacts/data_transformation]
+[2024-06-23 20:00:17,033: INFO: data_transformation: Splited data into training and test sets]
+[2024-06-23 20:00:17,034: INFO: data_transformation: (604, 12)]
+[2024-06-23 20:00:17,034: INFO: data_transformation: (202, 12)]
+[2024-06-23 20:00:17,034: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 20:00:17,035: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-06-23 20:00:17,037: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 20:00:17,038: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 20:00:17,039: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 20:00:17,040: INFO: common: created directory at: artifacts]
+[2024-06-23 20:00:17,040: INFO: common: created directory at: artifacts/model_trainer]
+[2024-06-23 20:00:17,047: ERROR: main: could not convert string to float: 'M']
+Traceback (most recent call last):
+  File "d:\1Semester 6\ML\Project\CO544-MLOPs\main.py", line 50, in <module>
+    data_ingestion.main()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\pipeline\stage_04_model_trainer.py", line 17, in main
+    model_trainer_config.train()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\components\model_trainer.py", line 27, in train
+    lr.fit(train_x, train_y)
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\linear_model\_coordinate_descent.py", line 980, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1273, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1007, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\_array_api.py", line 746, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\pandas\core\generic.py", line 2153, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'M'
+[2024-06-23 20:04:23,801: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 20:04:23,804: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 20:04:23,804: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 20:04:23,806: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 20:04:23,806: INFO: common: created directory at: artifacts]
+[2024-06-23 20:04:23,806: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-23 20:04:23,807: INFO: data_ingestion: File already exists of size: ~ 9 KB]
+[2024-06-23 20:04:23,810: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-23 20:04:23,810: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-06-23 20:04:23,811: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 20:04:23,812: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 20:04:23,814: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 20:04:23,814: INFO: common: created directory at: artifacts]
+[2024-06-23 20:04:23,815: INFO: common: created directory at: artifacts/data_validation]
+[2024-06-23 20:04:23,825: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 20:04:23,826: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-06-23 20:04:23,828: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 20:04:23,829: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 20:04:23,831: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 20:04:23,831: INFO: common: created directory at: artifacts]
+[2024-06-23 20:04:23,832: INFO: common: created directory at: artifacts/data_transformation]
+[2024-06-23 20:04:23,840: INFO: data_transformation: Splited data into training and test sets]
+[2024-06-23 20:04:23,840: INFO: data_transformation: (604, 12)]
+[2024-06-23 20:04:23,840: INFO: data_transformation: (202, 12)]
+[2024-06-23 20:04:23,841: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 20:04:23,841: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-06-23 20:04:23,843: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 20:04:23,844: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 20:04:23,846: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 20:04:23,847: INFO: common: created directory at: artifacts]
+[2024-06-23 20:04:23,847: INFO: common: created directory at: artifacts/model_trainer]
+[2024-06-23 20:04:23,854: ERROR: main: could not convert string to float: 'M']
+Traceback (most recent call last):
+  File "d:\1Semester 6\ML\Project\CO544-MLOPs\main.py", line 50, in <module>
+    data_ingestion.main()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\pipeline\stage_04_model_trainer.py", line 17, in main
+    model_trainer_config.train()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\components\model_trainer.py", line 27, in train
+    lr.fit(train_x, train_y)
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\linear_model\_coordinate_descent.py", line 980, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1273, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1007, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\_array_api.py", line 746, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\pandas\core\generic.py", line 2153, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'M'
+[2024-06-23 20:08:48,338: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 20:08:48,339: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 20:08:48,341: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 20:08:48,343: INFO: common: created directory at: artifacts]
+[2024-06-23 20:08:48,343: INFO: common: created directory at: artifacts/model_trainer]
+[2024-06-23 20:11:06,732: INFO: common: created directory at: artifacts/model_trainer]
+[2024-06-23 21:17:55,393: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 21:17:55,395: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:17:55,397: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:17:55,398: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:17:55,399: INFO: common: created directory at: artifacts]
+[2024-06-23 21:17:55,399: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-23 21:17:55,399: INFO: data_ingestion: File already exists of size: ~ 9 KB]
+[2024-06-23 21:17:55,415: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-23 21:17:55,415: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-06-23 21:17:55,417: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:17:55,418: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:17:55,420: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:17:55,420: INFO: common: created directory at: artifacts]
+[2024-06-23 21:17:55,421: INFO: common: created directory at: artifacts/data_validation]
+[2024-06-23 21:17:55,428: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 21:17:55,429: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-06-23 21:17:55,431: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:17:55,432: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:17:55,433: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:17:55,433: INFO: common: created directory at: artifacts]
+[2024-06-23 21:17:55,434: INFO: common: created directory at: artifacts/data_transformation]
+[2024-06-23 21:17:55,448: INFO: data_transformation: Splited data into training and test sets]
+[2024-06-23 21:17:55,448: INFO: data_transformation: (604, 12)]
+[2024-06-23 21:17:55,449: INFO: data_transformation: (202, 12)]
+[2024-06-23 21:17:55,450: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 21:17:55,450: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-06-23 21:17:55,452: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:17:55,453: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:17:55,454: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:17:55,455: INFO: common: created directory at: artifacts]
+[2024-06-23 21:17:55,455: INFO: common: created directory at: artifacts/model_trainer]
+[2024-06-23 21:17:55,463: ERROR: main: could not convert string to float: 'M']
+Traceback (most recent call last):
+  File "d:\1Semester 6\ML\Project\CO544-MLOPs\main.py", line 50, in <module>
+    data_ingestion.main()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\pipeline\stage_04_model_trainer.py", line 17, in main
+    model_trainer_config.train()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\components\model_trainer.py", line 27, in train
+    lr.fit(train_x, train_y)
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\linear_model\_coordinate_descent.py", line 980, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1273, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1007, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\_array_api.py", line 746, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\pandas\core\generic.py", line 2153, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'M'
+[2024-06-23 21:20:33,499: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 21:20:33,501: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:20:33,502: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:20:33,503: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:20:33,504: INFO: common: created directory at: artifacts]
+[2024-06-23 21:20:33,504: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-23 21:20:33,505: INFO: data_ingestion: File already exists of size: ~ 9 KB]
+[2024-06-23 21:20:33,507: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-23 21:20:33,508: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-06-23 21:20:33,510: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:20:33,511: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:20:33,512: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:20:33,513: INFO: common: created directory at: artifacts]
+[2024-06-23 21:20:33,513: INFO: common: created directory at: artifacts/data_validation]
+[2024-06-23 21:20:33,520: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 21:20:33,521: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-06-23 21:20:33,523: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:20:33,524: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:20:33,525: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:20:33,525: INFO: common: created directory at: artifacts]
+[2024-06-23 21:20:33,526: INFO: common: created directory at: artifacts/data_transformation]
+[2024-06-23 21:20:33,534: INFO: data_transformation: Splited data into training and test sets]
+[2024-06-23 21:20:33,534: INFO: data_transformation: (604, 12)]
+[2024-06-23 21:20:33,535: INFO: data_transformation: (202, 12)]
+[2024-06-23 21:20:33,535: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 21:20:33,536: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-06-23 21:20:33,538: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:20:33,538: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:20:33,539: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:20:33,540: INFO: common: created directory at: artifacts]
+[2024-06-23 21:20:33,540: INFO: common: created directory at: artifacts/model_trainer]
+[2024-06-23 21:20:33,547: ERROR: main: could not convert string to float: 'M']
+Traceback (most recent call last):
+  File "d:\1Semester 6\ML\Project\CO544-MLOPs\main.py", line 50, in <module>
+    data_ingestion.main()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\pipeline\stage_04_model_trainer.py", line 17, in main
+    model_trainer_config.train()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\components\model_trainer.py", line 27, in train
+    lr.fit(train_x, train_y)
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\linear_model\_coordinate_descent.py", line 980, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1273, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\validation.py", line 1007, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\sklearn\utils\_array_api.py", line 746, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\pandas\core\generic.py", line 2153, in __array__
+    arr = np.asarray(values, dtype=dtype)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'M'
+[2024-06-23 21:22:02,566: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 21:22:02,569: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:22:02,569: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:22:02,571: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:22:02,571: INFO: common: created directory at: artifacts]
+[2024-06-23 21:22:02,572: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-23 21:22:02,572: INFO: data_ingestion: File already exists of size: ~ 9 KB]
+[2024-06-23 21:22:02,575: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-23 21:22:02,575: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-06-23 21:22:02,577: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:22:02,578: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:22:02,579: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:22:02,580: INFO: common: created directory at: artifacts]
+[2024-06-23 21:22:02,580: INFO: common: created directory at: artifacts/data_validation]
+[2024-06-23 21:22:02,588: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 21:22:02,588: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-06-23 21:22:02,591: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:22:02,592: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:22:02,593: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:22:02,594: INFO: common: created directory at: artifacts]
+[2024-06-23 21:22:02,594: INFO: common: created directory at: artifacts/data_transformation]
+[2024-06-23 21:22:02,598: INFO: data_transformation: Splited data into training and test sets]
+[2024-06-23 21:22:02,598: INFO: data_transformation: (604, 12)]
+[2024-06-23 21:22:02,598: INFO: data_transformation: (202, 12)]
+[2024-06-23 21:22:02,599: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-06-23 21:22:02,600: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-06-23 21:22:02,602: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 21:22:02,602: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 21:22:02,604: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 21:22:02,605: INFO: common: created directory at: artifacts]
+[2024-06-23 21:22:02,605: INFO: common: created directory at: artifacts/model_trainer]
+[2024-06-23 21:22:02,630: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
