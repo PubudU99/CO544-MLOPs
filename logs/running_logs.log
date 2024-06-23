@@ -175,3 +175,115 @@ connection: close
 [2024-06-23 14:40:42,626: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
 
 x==========x]
+[2024-06-23 18:03:49,513: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 18:03:49,516: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 18:03:49,519: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 18:03:49,521: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 18:03:49,522: INFO: common: created directory at: artifacts]
+[2024-06-23 18:03:49,524: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-23 18:03:49,525: INFO: data_ingestion: File already exists of size: ~ 9 KB]
+[2024-06-23 18:03:49,536: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-23 18:03:49,536: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-06-23 18:03:49,539: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 18:03:49,543: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 18:03:49,544: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 18:03:49,544: INFO: common: created directory at: artifacts]
+[2024-06-23 18:03:49,545: ERROR: main: "'ConfigBox' object has no attribute 'columns'"]
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'COLUMNS'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'COLUMNS'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'COLUMNS'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\config_box.py", line 28, in __getattr__
+    return super().__getattr__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'COLUMNS'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 503, in __getitem__
+    return super().__getitem__(item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'columns'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 536, in __getattr__
+    value = self.__getitem__(item, _ignore_default=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 524, in __getitem__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'columns'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 538, in __getattr__
+    value = object.__getattribute__(self, item)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigBox' object has no attribute 'columns'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\1Semester 6\ML\Project\CO544-MLOPs\main.py", line 20, in <module>
+    data_ingestion.main()
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\pipeline\stage_02_data_validation.py", line 14, in main
+    data_validation_config = config.get_data_validation_config()
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\src\mlProject\config\configuration.py", line 37, in get_data_validation_config
+    schema = self.schema.COLUMNS
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\config_box.py", line 30, in __getattr__
+    return super().__getattr__(item.lower())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\1Semester 6\ML\Project\CO544-MLOPs\venv\Lib\site-packages\box\box.py", line 552, in __getattr__
+    raise BoxKeyError(str(err)) from _exception_cause(err)
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'columns'"
+[2024-06-23 18:06:56,920: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-23 18:06:56,922: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 18:06:56,923: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 18:06:56,924: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 18:06:56,924: INFO: common: created directory at: artifacts]
+[2024-06-23 18:06:56,925: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-23 18:06:56,925: INFO: data_ingestion: File already exists of size: ~ 9 KB]
+[2024-06-23 18:06:56,927: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-23 18:06:56,928: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-06-23 18:06:56,929: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-23 18:06:56,930: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-23 18:06:56,932: INFO: common: yaml file: schema.yaml loaded successfully]
+[2024-06-23 18:06:56,933: INFO: common: created directory at: artifacts]
+[2024-06-23 18:06:56,933: INFO: common: created directory at: artifacts/data_validation]
+[2024-06-23 18:06:56,942: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
