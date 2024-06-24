@@ -1,3 +1,14 @@
 ElasticNet:
   alpha: 0.2
   l1_ratio: 0.1
+
+
+LogisticRegression:
+  penalty: 'elasticnet'    
+  tol: 0.01                 
+  C: 0.2976351441631313     
+  class_weight: 'balanced'    
+  solver: 'saga'            
+  max_iter: 2500            
+  l1_ratio: 0.4 
+  
