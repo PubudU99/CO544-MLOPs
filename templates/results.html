@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Prediction</title>
+    <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="static/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <!-- <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('static/assets/img/wine.gif')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Wine Quality</h1>
+                        {% if prediction %}
+                        <h2>Prediction: {{ prediction }}</h2>
+                        {% endif %}
+                        <span class="subheading"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Form Section -->
+    <section>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <form action="/predict" method="POST">
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" class="form-control" id="age" name="age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sex">Sex</label>
+                            <select class="form-control" id="sex" name="sex">
+                                <option value="0">Female</option>
+                                <option value="1">Male</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="chest_pain_type">Chest Pain Type</label>
+                            <select class="form-control" id="chest_pain_type" name="chest_pain_type">
+                                <option value="TA">Typical Angina</option>
+                                <option value="ATA">Atypical Angina</option>
+                                <option value="NAP">Non-Anginal Pain</option>
+                                <option value="ASY">Asymptomatic</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="resting_bp">Resting Blood Pressure (mm Hg)</label>
+                            <input type="number" class="form-control" id="resting_bp" name="resting_bp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cholesterol">Serum Cholesterol (mm/dl)</label>
+                            <input type="number" class="form-control" id="cholesterol" name="cholesterol" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fasting_bs">Fasting Blood Sugar</label>
+                            <select class="form-control" id="fasting_bs" name="fasting_bs">
+                                <option value="0">&lt; 120 mg/dl</option>
+                                <option value="1">&gt; 120 mg/dl</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="resting_ecg">Resting Electrocardiogram Results</label>
+                            <select class="form-control" id="resting_ecg" name="resting_ecg">
+                                <option value="Normal">Normal</option>
+                                <option value="ST">ST-T wave abnormality</option>
+                                <option value="LVH">Left ventricular hypertrophy</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="max_hr">Maximum Heart Rate Achieved</label>
+                            <input type="number" class="form-control" id="max_hr" name="max_hr" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exercise_angina">Exercise-induced Angina</label>
+                            <select class="form-control" id="exercise_angina" name="exercise_angina">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="oldpeak">Oldpeak</label>
+                            <input type="number" step="0.1" class="form-control" id="oldpeak" name="oldpeak" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="slope">Slope of the Peak Exercise ST Segment</label>
+                            <select class="form-control" id="slope" name="slope">
+                                <option value="Up">Up</option>
+                                <option value="Flat">Flat</option>
+                                <option value="Down">Down</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Model</label>
+                            <select class="form-control" id="model" name="model">
+                                <option value="Decision Tree Classifier">Decision Tree Classifier</option>
+                                <option value="Logistic Regression Classifier">Logistic Regression Classifier</option>
+                                <option value="Random Forest Classifier">Random Forest Classifier</option>
+                                <option value="SVM Classifier">SVM Classifier</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="index_to_test">Index to Test</label>
+                            <input type="number" class="form-control" id="index_to_test" name="index_to_test" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/boktiarahmed73/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.youtube.com/dswithbappy">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack
